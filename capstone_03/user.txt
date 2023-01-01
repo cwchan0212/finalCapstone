@@ -1,0 +1,6 @@
+admin, adm1n
+boss, b0ss
+chris, chrIs
+john, Smith
+mark, Mark
+kay, kkK
