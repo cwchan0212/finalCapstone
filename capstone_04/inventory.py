@@ -80,6 +80,34 @@ dotted_line_separator = f"{'-' * display_width}"
 double_dash_separator = f"{'=' * display_width}"
 # Set the list "shoe_header" to store the default value of the header of the shoes
 shoe_header = ["Country", "Code", "Product", "Cost", "Quantity"]
+# Set the list "inventory_text_list" to store the default setting of the text file "inventory.txt"
+inventory_text_list = [
+    "Country,Code,Product,Cost,Quantity",
+    "South Africa,SKU44386,Air Max 90,2300,20",
+    "China,SKU90000,Jordan 1,3200,50",
+    "Vietnam,SKU63221,Blazer,1700,19",
+    "United States,SKU29077,Cortez,970,60",
+    "Russia,SKU89999,Air Force 1,2000,43",
+    "Australia,SKU57443,Waffle Racer,2700,4",
+    "Canada,SKU68677,Air Max 97,3600,13",
+    "Egypt,SKU19888,Dunk SB,1500,26",
+    "Britain,SKU76000,Kobe 4,3400,32",
+    "France,SKU84500,Pegasus,2490,28",
+    "Zimbabwe,SKU20207,Air Presto,2999,7",
+    "Morocco,SKU77744,Challenge Court,1450,11",
+    "Israel,SKU29888,Air Zoom Generation,2680,6",
+    "Uganda,SKU33000,Flyknit Racer,4900,9",
+    "Pakistan,SKU77999,Air Yeezy 2,4389,67",
+    "Brazil,SKU44600,Air Jordan 11,3870,24",
+    "Columbia,SKU87500,Air Huarache,2683,8",
+    "India,SKU38773,Air Max 1,1900,29",
+    "Vietnam,SKU95000,Air Mag,2000,2",
+    "Israel,SKU79084,Air Foamposite,2430,4",
+    "China,SKU93222,Air Stab,1630,10",
+    "South Korea,SKU66734,Hyperdunk,1899,7",
+    "Australia,SKU71827,Zoom Hyperfuse,1400,15",
+    "France,SKU20394,Eric Koston 1,2322,17"        
+]
 #
 #
 #######################################################################################################################
@@ -160,6 +188,32 @@ def print_banner():
     print(f"\n{double_dash_separator}\n")
 #
 # END: print_banner
+#
+#######################################################################################################################
+#
+# Start: restore_file
+#
+# Create a function "restore_file" with the parameters "text_file_list" and "text_file" to restore the text file to default setting
+def restore_file(text_file_list, text_file):
+    # Create a variable "is_restored" to false
+    is_restored = False
+    # If the parameter "text_file_list" is not empty, try to write the text file
+    if text_file_list:
+        # Set the list "text_file_list" to store all reformatted elements "line" in the list "text_file_list" 
+        text_file_list = [ f"{line}\n" if index != len(text_file_list) -1 else f"{line}" for index, line in enumerate(text_file_list) ]
+        # Use try-except block to write the text file as the file object
+        try: 
+            with open(f"{current_directory}/{text_file}", "w") as file: 
+                file.writelines(text_file_list)
+                # Set the variable "is_restored" to true
+                is_restored = True
+        # If it fails to write the text file, print the message to notify the user
+        except:
+            print(f"Fail to load the text file {text_file}.\nPlease check the current directory and the file location of the text file {text_file}.\n")
+    # Return the variable "is_restored"
+    return is_restored
+#
+# End: restore_file
 #
 #######################################################################################################################
 
@@ -731,16 +785,29 @@ This menu should be inside the while loop. Be creative!
 #
 # START: Main Menu
 #
-
+# Loading the default setting of the text file inventory.txt
+#
+# If it fails to restore the default setting of the text file, print the error message to notify the user 
+# by calling the function "restore_file" with  the parameters "inventory_text_list" and "inventory_file"
+# and use exit() to exit the program
+if not restore_file(inventory_text_list, inventory_file):
+    print(f"Fail to load the default setting of the text file {inventory_file}\n")
+    exit()
+#
 # Set a variable "is_print_banner" as true, print the banner the first time
 is_print_banner = True
 # Use while-loop to execute the following if/else statements if the condition is true
 while True:
     # If the variable "is_print_banner" is true, print the banner by calling a function "print_banner"
     if is_print_banner:  
-        print_banner()
+        print_banner()        
+        # Set a variable "note" to store the note for the user
+        note = f"Note: All data will be restored to the default setting".upper()
+        # Print the variable "note" with the required spaces
+        print(f"{' ' * ((display_width - len(note)) // 2) } {note}\n")
+        
     # Set a variable "menu_option" to store the user's option for the main menu
-    menu_option = input(f"\nPlease select an option: \n 1 - Check inventory \n 2 - Restock item \n 3 - Search shoe \n 4 - Inventory value \n 5 - Item being for sale \n(press Enter to exit)  :    ").strip()
+    menu_option = input(f"\nPlease select an option: \n 1 - Check inventory \n 2 - Restock item \n 3 - Search item \n 4 - Inventory value \n 5 - Item being for sale \n(press Enter to exit)  :    ").strip()
     # Print a new line
     print("\n")
     # If the variable "menu_option" is empty and is a digit, execute the following if/else statements
@@ -765,6 +832,8 @@ while True:
             print("You enter an invalid option. Please enter an option from 1 - 5.\n")
     # If the variable "menu_option" is empty, use "break" to exit while-loop
     elif menu_option == "":
+        # Print the message to exit the program
+        print(f"\nGoodbye!!!\n")
         break
     # If any other case, print the message to notify the user of the invalid option
     else:

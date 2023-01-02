@@ -21,6 +21,41 @@ from datetime import datetime
 ########################################################################################################################
 #
 # Compulsory Task Part 1
+# START: Set the environment variables
+#
+# Set the variable "current_directory" to store the current directory path
+# Replace the backslash of the variable "current_directory" with a dash
+current_directory = os.getcwd().replace("\\", "/")
+# Set the variable "file_name" and store the text file name "user.txt"
+user_file = "user.txt"
+# Set the variable "task_file" and store the text file name "tasks.txt"
+task_file = "tasks.txt"
+# Set the variable "display_width" of the display width to 100
+display_width = 120
+# Set a variable "double_dash_separator" to a dotted line separator for display purpose
+double_dash_separator = f"{'=' * display_width}"
+# Set the list "task_header" and store the task header
+task_header = ["Task:", "Assigned to:", "Date Assigned:", "Due Date", "Task Complete?", "Task Description:"]
+# Set the variable "max_task_header_length" to the maximum length of the element in the list "task_header"
+max_task_header_length = len(max(task_header, key=len))
+# Set the variable "task_header_length" to 25 as the spaces are occupied by the task header 
+task_header_length = 25
+# Set the list "username_text_list" to store the default setting of the text file "user.txt"
+username_text_list = [
+    "admin, adm1n",
+    "boss, b0ss"
+
+]
+# Set the list "task_text_list" to store the default setting of the text file "tasks.txt"
+task_text_list = [
+    "admin, Register Users with taskManager.py, Use taskManager.py to add the usernames and passwords for all team members that will be using this program., 10 Oct 2019, 20 Oct 2019, No",
+    "admin, Assign initial tasks, Use taskManager.py to assign each team member with appropriate tasks, 10 Oct 2019, 25 Oct 2019, No",
+    "boss, Meet the new customers, Discuss with them the detail of the new contracts, 14 Nov 2022, 31 Dec 2023, No",
+    "boss, Visit the customers' shops and office, Seek their feedback on the company services, 16 Dec 2022, 30 Nov 2025, No"
+]
+########################################################################################################################
+#
+# Compulsory Task Part 1
 # START: Create self-defined functions
 ########################################################################################################################
 # Create a function "valid_date" to validate the date inputs with the parameters of "year_param", "month_param", "day_param"
@@ -70,27 +105,29 @@ def print_banner():
 # END: print_banner
 #
 #######################################################################################################################
+# Create a function "restore_file" with the parameters "text_file_list" and "text_file" to restore the text file to default setting
+def restore_file(text_file_list, text_file):
+    # Create a variable "is_restored" to false
+    is_restored = False
+    # If the parameter "text_file_list" is not empty, try to write the text file
+    if text_file_list:
+        # Set the list "text_file_list" to store all reformatted elements "line" in the list "text_file_list" 
+        text_file_list = [ f"{line}\n" if index != len(text_file_list) -1 else f"{line}" for index, line in enumerate(text_file_list) ]
+        # Use try-except block to write the text file as the file object
+        try: 
+            with open(f"{current_directory}/{text_file}", "w") as file: 
+                file.writelines(text_file_list)
+                # Set the variable "is_restored" to true
+                is_restored = True
+        # If it fails to write the text file, print the message to notify the user
+        except:
+            print(f"Fail to load the text file {text_file}.\nPlease check the current directory and the file location of the text file {text_file}.\n")
+    # Return the variable "is_restored"
+    return is_restored
 #
-# Compulsory Task Part 1
-# START: Set the environment variables
+# End: Create self-defined function - restore_file
 #
-# Set the variable "current_directory" to store the current directory path
-# Replace the backslash of the variable "current_directory" with a dash
-current_directory = os.getcwd().replace("\\", "/")
-# Set the variable "file_name" and store the text file name "user.txt"
-user_file = "user.txt"
-# Set the variable "task_file" and store the text file name "tasks.txt"
-task_file = "tasks.txt"
-# Set the variable "display_width" of the display width to 100
-display_width = 120
-# Set a variable "double_dash_separator" to a dotted line separator for display purpose
-double_dash_separator = f"{'=' * display_width}"
-# Set the list "task_header" and store the task header
-task_header = ["Task:", "Assigned to:", "Date Assigned:", "Due Date", "Task Complete?", "Task Description:"]
-# Set the variable "max_task_header_length" to the maximum length of the element in the list "task_header"
-max_task_header_length = len(max(task_header, key=len))
-# Set the variable "task_header_length" to 25 as the spaces are occupied by the task header 
-task_header_length = 25 
+#######################################################################################################################
 # 
 # *********************************************************************************************************************
 #
@@ -116,13 +153,25 @@ admin_login = False
 # Compulsory Task Part 1
 # START: Login Section
 #
+# Loading the default setting of the text file inventory.txt
+#
+# If it fails to restore the default setting of the text file, print the error message to notify the user 
+# by calling the function "restore_file" with  the parameters "inventory_text_list" and "inventory_file"
+# and use exit() to exit the program
+if not restore_file(username_text_list, user_file) or not restore_file(task_text_list, task_file):
+    print(f"Fail to load the default setting of the text files {user_file} or/and {task_file}.\n")
+    exit()
+########################################################################################################################
 # Create an empty list "usernames" to store a list of usernames 
 usernames = []
 # Create an empty list "passwords" to store a list of passwords 
 passwords = []
 # Call a function to "print_banner" for login
 print_banner()
-#
+# Set a variable "note" to store the note for the user
+note = f"Note: All data will be restored to the default setting".upper()
+# Print the variable "note" with the required spaces
+print(f"{' ' * ((display_width - len(note)) // 2) } {note}\n")
 #
 print(f"Accounts for testing - \nusername: admin\t\tusername: boss\npassword: adm1n \tpassword: b0ss\n")
 #
@@ -141,51 +190,77 @@ with open(f"{current_directory}/{user_file}", "r") as file:
             # Add the index 1 (second part) of "user_split" into the list "passwords"
             # The second part is the password, its leading and trailing spaces are removed
             passwords.append(user_split[1].strip())
-# Ask the user to enter the username and store in the variable "username_input"
-username_input = input("Please enter your username: ").strip()
-# Ask the user to enter the password and store in the variable "password_input"
-password_input = input("Please enter your password: ").strip()
+
+# Set a variable "username_input" to empty
+username_input = ""
+# Set a variable "password_input" to empty
+password_input = ""
+
 # Set the variable "logged" to false for the login status
 logged = False
 # Use while-loop to execute the following statements if the condition of the variable "logged" is true 
 while not logged:
-    # If the variable "username_input" is found in the list "username", execute the following the statements
-    if username_input in usernames:
-        # Set the variable "index" to the position of the variable "username_input" in the list "usernames"
-        index = usernames.index(username_input)
-        # If the variable "password_input" is matched with the "index" element of the list "passwords",
-        # execute the following statements     
-        if password_input == passwords[index]:
-            #
-            # **********************************************************************************************************
-            #
-            # Compulsory Task Part 2
-            #
-            # Set the variable "admin_login" to True if the variable "username_input" is equal to "admin",
-            # otherwise it sets to false
-            admin_login = True if username_input == "admin" else False
-            #
-            # **********************************************************************************************************
-            #
-            # Set the variable "logged" to true after the new username is registered
-            # It leads to the exit of the while-loop
-            logged = True            
-            # Print a new line
-            print("\n")
-            # Print the welcome message to the user
-            print(f"Welcome back, {username_input}!\n")
-        # If the user enters the incorrect username/password, print the error message to the user
-        # Note: It does not reveal the specific type of error to the user due to security concern
-        else:
-            print("Username and/or password are incorrect.\n")
-            # Use a break to stop the while-loop
+    # If the variable "username_input" is empty, ask the user to enter the username
+    if username_input == "": 
+        # Ask the user to enter the username and store in the variable "username_input"
+        username_input = input("Please enter your username: ").strip()
+        # If the variable "username_input" is empty, use "break" to exit the while-loop
+        if username_input == "":
             break
-    # If the username is not found in the list "username", print the error message to the user
-     # Note: It does not reveal the specific type of error to the user due to security concern
+    # If the variable "username_input" is not empty, execute the following if/else statements
     else:
-        print("Username and/or password are incorrect.\n")
-        # Use a break to stop the while-loop
-        break
+    # If the variable "password_input" is empty, ask the user to enter the password
+        if password_input == "": 
+            # Ask the user to enter the password and store in the variable "password_input"
+            password_input = input("Please enter your password: ").strip()
+            # If the variable "password_input" is empty, use "break" to exit the while-loop
+            if password_input == "":
+                break
+        # If the variable "password_input" is not empty, execute the following if/else statements
+        else:
+            # If the variable "username_input" is found in the list "username", execute the following the statements
+            if username_input in usernames:
+                # Set the variable "index" to the position of the variable "username_input" in the list "usernames"
+                index = usernames.index(username_input)
+                # If the variable "password_input" is matched with the "index" element of the list "passwords",
+                # execute the following statements     
+                if password_input == passwords[index]:
+                    #
+                    # **********************************************************************************************************
+                    #
+                    # Compulsory Task Part 2
+                    #
+                    # Set the variable "admin_login" to True if the variable "username_input" is equal to "admin",
+                    # otherwise it sets to false
+                    admin_login = True if username_input == "admin" else False
+                    #
+                    # **********************************************************************************************************
+                    #
+                    # Set the variable "logged" to true after the new username is registered
+                    # It leads to the exit of the while-loop
+                    logged = True            
+                    # Print a new line
+                    print("\n")
+                    # Print the welcome message to the user
+                    print(f"Welcome back, {username_input}!\n")
+                # If the user enters the incorrect username/password, print the error message to the user,
+                # set the variables "username_input" and "password_input" to empty
+                # Note: It does not reveal the specific type of error to the user due to security concern
+                else:
+                    print("Username and/or password are incorrect.\n")
+                    username_input = ""
+                    password_input = ""
+                    # Use a break to stop the while-loop
+                    # break
+            # If the username is not found in the list "username", print the error message to the user,
+            # set the variables "username_input" and "password_input" to empty
+            # Note: It does not reveal the specific type of error to the user due to security concern
+            else:
+                print("Username and/or password are incorrect.\n")
+                username_input = ""
+                password_input = ""
+                # Use a break to stop the while-loop
+                # break
 
 # If the variable "logged" is not true, exit the program
 if not logged:
@@ -573,7 +648,7 @@ e - Exit\n\
 
     elif menu == 'e':
         # Add a new line
-        print('Goodbye!!!\n')
+        print(f'\nGoodbye!!!\n')
         exit()
 
 # **********************************************************************************************************************

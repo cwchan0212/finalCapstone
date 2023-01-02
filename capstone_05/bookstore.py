@@ -1249,11 +1249,11 @@ while True:
         search_book()
     # If the variable "menu" is empty, print the message "Bye" and use "break" to exit the while-loop
     elif menu == "0":
-        print(f"{colored_text('cyan', 'Bye!')}\n")
+        print(f"\n{colored_text('cyan', 'Bye!')}\n")
         break
     # If any other cases, print the message to notify the user for entering the invalid menu option.
     else:
-        print(f"{colored_text('red', 'You enter the invalid menu option.')}\n")
+        print(f"\n{colored_text('red', 'You enter the invalid menu option.')}\n")
     # Set the variable "is_print_banner" to false if the operation is done
     is_print_banner = False
 #
