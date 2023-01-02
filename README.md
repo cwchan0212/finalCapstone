@@ -16,7 +16,7 @@
 ### Introduction
 This project contains a program that allows the user to access two different financial calculators: an investment calculator and a home loan repayment calculator.
 
-<img align="center" src="assets/capston01_1.png" width="400"/>
+<p align="center"><img src="assets/capston01_1.png" width="400"/></p>
 
 ### Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
