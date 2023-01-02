@@ -1,17 +1,17 @@
 ## DfE Software Engineering - Capstone Projects
 
 
-| Name  | Descirption  |  Skills  | Completion Date  | Difficulty  |
-|---|---|---|---|:-:|
-| [Financial Calculator](#capstone-project-i-financial-calculator)  | Built a financial calculator that allows the user to access two different financial calculators: an investment calculator and a home loan repayment calculator.  | Python  | 6 December 2022  | :star::star:  |
-| [Task Manager](#capstone-project-ii-task-manager)  | Built a task management tool for small businesses that allows users to log in, register new users, add tasks, and view a list of tasks.  | Python  | 12 December 2022  | :star::star::star:  |
-| [Task Manager (Advanced)](#capstone-project-iii-task-manager-advanced)  | Built a task management tool for small businesses to manage tasks assigned to team members. This advanced version includes additional features such as the ability to generate reports and display statistics.  | Python  | 17 December 2022  | :star::star::star::star:  |
-| [Inventory Management System](#capstone-project-iv-inventory-system)  | Built an inventory management tool for shoe warehouses that allows the user to perform various tasks related to managing the warehouse and its inventory.  | Python (OOP)  | 22 December 2022  |:star::star::star::star: |
-| [Bookstore Management System](#capstone-v-bookstore-management-system)  | Built a bookstore management system that allows a clerk to manage the store's inventory by adding, updating, deleting, and searching for books in the database.   | Python, SQLite  | 28 December 2022  | :star::star::star::star::star:  |
+| Name  | Descirption  |  Skills  | Completion Date  | Difficulty  | Demo |
+|---|---|---|---|:-:|:-:|
+| [Financial Calculator](#capstone-project-i-financial-calculator)  | Built a financial calculator that allows the user to access two different financial calculators: an investment calculator and a home loan repayment calculator.  | Python  | 6 December 2022  | :star::star:  | <a href="https://bit.ly/3vyy77A" target="_blank">💰</a>  |
+| [Task Manager](#capstone-project-ii-task-manager)  | Built a task management tool for small businesses that allows users to log in, register new users, add tasks, and view a list of tasks.  | Python  | 12 December 2022  | :star::star::star:  |<a href="https://bit.ly/3vyy77A" target="_blank">:one:</a>  |
+| [Task Manager (Advanced)](#capstone-project-iii-task-manager-advanced)  | Built a task management tool for small businesses to manage tasks assigned to team members. This advanced version includes additional features such as the ability to generate reports and display statistics.  | Python  | 17 December 2022  | :star::star::star::star:  |<a href="https://bit.ly/3vyy77A" target="_blank">:one:</a>  |
+| [Inventory Management System](#capstone-project-iv-inventory-system)  | Built an inventory management tool for shoe warehouses that allows the user to perform various tasks related to managing the warehouse and its inventory.  | Python (OOP)  | 22 December 2022  |:star::star::star::star: |<a href="https://bit.ly/3vyy77A" target="_blank">:one:</a>  |
+| [Bookstore Management System](#capstone-v-bookstore-management-system)  | Built a bookstore management system that allows a clerk to manage the store's inventory by adding, updating, deleting, and searching for books in the database.   | Python, SQLite  | 28 December 2022  | :star::star::star::star::star:  |<a href="https://bit.ly/3vyy77A" target="_blank">:one:</a>  |
 
 --
 
-## [Capstone Project I: Financial Calculator](#dfe-software-engineering---capstone-projects)
+## [Capstone Project I: Financial Calculator](#dfe-software-engineering---capstone-projects) <a href="https://bit.ly/3vyy77A" target="_blank">💰 </a>  |
 
 ### Introduction
 This project contains a program that allows the user to access two different financial calculators: an investment calculator and a home loan repayment calculator.
@@ -56,7 +56,8 @@ To use the investment calculator, follow the prompts in the command line interfa
 
 |<p align="center"><img src="assets/capston01_2.png" width="500" target="_blank"/>   |<p align="center"><img src="assets/capston01_3.png" width="500" target="_blank"/>|
 |---|---|
-|    |   |
+| Simple Interest: deposit_amount x (1 + (interest_rate/100) x year)   | Compound Interest: deposit_amount * (1 + (interest_rate/100)^year) |
+  
 
 #### Home Loan Repayment Calculator
 The home loan repayment calculator allows the user to calculate the monthly repayment amount based on the loan principal, interest rate, and loan term.
