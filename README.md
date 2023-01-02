@@ -1,4 +1,5 @@
 ## DfE Software Engineering - Capstone Projects
+- Author: [Eddy Chan, chi-wai](https://www.linkedin.com/in/cwchanst/)
 
 | Name  | Description  |  Skills  | Completion Date  | Difficulty  | Preview |
 |---|---|---|---|:-:|:-:|
@@ -520,11 +521,5 @@ Once the user accesses the program, the menu is shown below:
 
 <p align="center"><img src="assets/capston05_9.png"  width="600" target="_blank"/><br><i>Fig. 5.10 Search Book by quantity - range search</i></p>
 
-##  Contributing
-If you would like to contribute to this project, please follow the guidelines in the CONTRIBUTING.md file.
-
-## License
-This project is licensed under the terms of the MIT license. Please see the LICENSE file for more information.
-
 ## Acknowledgments
-This project was inspired by [HyperionDev](https://www.hyperiondev.com/). 
+This projects were inspired by [HyperionDev](https://www.hyperiondev.com/). 
