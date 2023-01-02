@@ -2,7 +2,7 @@
 
 
 | Name  | Descirption  |  Skills  | Completion Date  | Difficulty  |
-|---|---|---|---|---|
+|---|---|---|---|:-:|
 | [Financial Calculator](#capstone-project-i-financial-calculator)  | Built a financial calculator that allows the user to access two different financial calculators: an investment calculator and a home loan repayment calculator.  | Python  | 6 December 2022  | :star::star:  |
 | [Task Manager](#capstone-project-ii-task-manager)  | Built a task management tool for small businesses that allows users to log in, register new users, add tasks, and view a list of tasks.  | Python  | 12 December 2022  | :star::star::star:  |
 | [Task Manager (Advanced)](#capstone-project-iii-task-manager-advanced)  | Built a task management tool for small businesses to manage tasks assigned to team members. This advanced version includes additional features such as the ability to generate reports and display statistics.  | Python  | 17 December 2022  | :star::star::star::star:  |
@@ -16,7 +16,7 @@
 ### Introduction
 This project contains a program that allows the user to access two different financial calculators: an investment calculator and a home loan repayment calculator.
 
-<p align="center"><img src="assets/capston01_1.png" width="600"/></p>
+<p align="center"><img src="assets/capston01_1.png" width="600" target="_blank"/></p>
 
 ### Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -47,39 +47,16 @@ cd finalCapstone/capstone_01/
 python finance_calculator.py
 ```
 
-### Using the Calculators
+### Usage
 
 #### Investment Calculator 
-The investment calculator allows the user to calculate the future value of their investment based on the initial principal, annual interest rate, and the number of years.
-(Here is the generalised idea)
+The investment calculator allows the user to calculate the future value of their investment based on the amount of deposit (i.e. initial principal), annual interest rate, and the number of years. 
 
 To use the investment calculator, follow the prompts in the command line interface (CLI).
 
-
-```py
-def investment_calculator():
-      # Prompt the user for the amount of the deposit (i.e. the initial principal)
-  deposit_amount = float(input("Please enter the AMOUNT OF MONEY that you deposit: ").strip())
-
-  # Prompt the user for the annual interest rate
-  interest_rate = float(input("Please enter the number of INTEREST RATE: ").strip())
-
-  # Prompt the user for the number of years
-  year = float(input("Please enter the number of YEAR(S) you plan on investing: ").strip())
-  
-  # Prompt the user for the type of interest
-  interest_type = input("Please select the TYPE of interest (simple / compound): ").strip()
-
-  # Calculate the future value based on the type of interest
-  if interest_type == "simple":
-      amount = round(deposit_amount *(1 + (interest_rate/100) * year), 2)
-  elif interest_type == "compound":
-      amount = round(deposit_amount * math.pow((1 + (interest_rate/100)), year), 2)
-
-  # Print the result  
-  print(f"\nThe total amount of principal and interest is R {amount} at {interest_type} interest rate of {interest_rate} % after {year} year(s) deposited.")
-```
-
+|   |   |
+|---|---|
+|    |   |
 
 #### Home Loan Repayment Calculator
 The home loan repayment calculator allows the user to calculate the monthly repayment amount based on the loan principal, interest rate, and loan term.
