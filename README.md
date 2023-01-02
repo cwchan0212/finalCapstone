@@ -54,7 +54,7 @@ The investment calculator allows the user to calculate the future value of their
 
 To use the investment calculator, follow the prompts in the command line interface (CLI).
 
-|   |   |
+|<p align="center"><img src="assets/capston01_2.png" width="500" target="_blank"/>   |<p align="center"><img src="assets/capston01_3.png" width="500" target="_blank"/>|
 |---|---|
 |    |   |
 
