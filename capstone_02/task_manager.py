@@ -131,14 +131,16 @@ with open(f"{current_directory}/{user_file}", "r") as file:
     # User for-loop to store the username and passwords in the list "usernames" and the list "passwords"
     # for all the elements "line" in the "file" object
     for line in file:
+        # If the variable "line" is not empty and comma in the variable "line", execute the following if/else statements
+        if line and line.find(",") != -1:
         # Set the list "user_split" to store the part that is split by comma
-        user_split = line.split(",")
-        # Add the index 0 (first part) of "user_split" into the list "usernames"
-        # The first part is the username, its leading and trailing spaces are removed
-        usernames.append(user_split[0].strip())
-        # Add the index 1 (second part) of "user_split" into the list "passwords"
-        # The second part is the password, its leading and trailing spaces are removed
-        passwords.append(user_split[1].strip())
+            user_split = line.split(",")
+            # Add the index 0 (first part) of "user_split" into the list "usernames"
+            # The first part is the username, its leading and trailing spaces are removed
+            usernames.append(user_split[0].strip())
+            # Add the index 1 (second part) of "user_split" into the list "passwords"
+            # The second part is the password, its leading and trailing spaces are removed
+            passwords.append(user_split[1].strip())
 # Ask the user to enter the username and store in the variable "username_input"
 username_input = input("Please enter your username: ").strip()
 # Ask the user to enter the password and store in the variable "password_input"

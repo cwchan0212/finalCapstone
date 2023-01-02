@@ -106,10 +106,16 @@ def print_banner():
     for line in logo_list:
         # Print the element of line with the required spaces
         print(f"{' ' * ((display_width - len(line))//2) }{line}")
+    # Set a variable "menu_note" to store the menu header
+    menu_note = "(Advanced Version)"
+    # Set a variable "menu_header_with_space" to store the menu header with space
+    menu_note_with_space = " ".join([character.upper() for character in menu_note])
     # Set a variable "menu_header" to store the menu header
-    menu_header = "== Help you manage the tasks=="
+    menu_header = "== Help you manage the tasks =="
     # Set a variable "menu_header_with_space" to store the menu header with space
     menu_header_with_space = " ".join([character.upper() for character in menu_header])
+    # Print the variable "menu_note_with_space" with the required spaces
+    print(f"\n{' ' * ((display_width - len(menu_note_with_space))//2) }{menu_note_with_space}") 
     # Print the variable "menu_header_with_space" with the required spaces
     print(f"\n{' ' * ((display_width - len(menu_header_with_space))//2) }{menu_header_with_space}")    
     # Print a double dash separator with the variable "double_dash_separator"
@@ -206,8 +212,10 @@ def get_task_overview_list():
         # If the list "all_task_list" is not empty, count the task overview for all the elements "task_line" of the list "all_task_list"
         if all_task_list:
             for task_line in all_task_list:
-                # Append the list "task_2d_list" by all elements "task_line"
-                task_2d_list.append(task_line.strip().split(","))
+                # If the variable "task_line" is not empty, append the list "task_2d_list" by all elements "task_line"
+                if task_line:
+                    # Append the list "task_2d_list" by all elements "task_line"
+                    task_2d_list.append(task_line.strip().split(","))
             
             # Use the variable "total_number_of_tasks" to store the length of the list "task_2d_list"
             total_number_of_tasks = len(task_2d_list)
@@ -824,14 +832,16 @@ def update_task_file(old_task_line, new_task_line):
             updated_list = []              
             # Use for-loop to update the element "task_line" of the list "task_list"
             for task_line in task_list:
-                # If the element "task_line" is equal to the parameter "old_task_line",
-                # append the element "new_task_line" to the list "updated_list"
-                if task_line.strip() == old_task_line.strip():
-                    updated_list.append(f"{new_task_line}\n")
-                # If the element "task_line" is not equal to the parameter "old_task_line", 
-                # append the element "task_line"  to the list "updated_list"
-                else:
-                    updated_list.append(f"{task_line}\n")
+                # If the variable "task_line" is not empty, execute the following if/else statement
+                if task_line:
+                    # If the element "task_line" is equal to the parameter "old_task_line",
+                    # append the element "new_task_line" to the list "updated_list"
+                    if task_line.strip() == old_task_line.strip():
+                        updated_list.append(f"{new_task_line}\n")
+                    # If the element "task_line" is not equal to the parameter "old_task_line", 
+                    # append the element "task_line"  to the list "updated_list"
+                    else:
+                        updated_list.append(f"{task_line}\n")
             # Write the text file tasks.txt as the "file" object
             with open(f"{current_directory}/{task_file}", "w") as file:
                 file.writelines(updated_list)
@@ -1223,7 +1233,7 @@ def add_task():
                                         # Write a new line in the text file "tasks.txt" including:
                                         # assigned username, title, description, assigned date, due date and completion of the task 
                                         # with the separator (i.e. comma)                                         
-                                        file.write(f"{username_assigned}, {task_title}, {task_description}, {task_assigned_date}, {task_due_date_formatted}, No\n")
+                                        file.write(f"\n{username_assigned}, {task_title}, {task_description}, {task_assigned_date}, {task_due_date_formatted}, No")
                                     # Print a new line
                                     print("\n")
                                     # Create a list "task_body" to store the detail of the new task for display
@@ -1596,14 +1606,16 @@ def login():
             # User for-loop to store the username and passwords in the list "usernames" and the list "passwords"
             # for all the elements "line" in the "file" object
             for line in file:
+                # If the variable "line" is not empty and comma in the variable "line", execute the following if/else statements
+                if line and line.find(",") != -1:
                 # Set the list "user_split" to store the part that is split by comma
-                user_split = line.split(",")
-                # Add the index 0 (first part) of "user_split" into the list "usernames"
-                # The first part is the username, its leading and trailing spaces are removed
-                usernames.append(user_split[0].strip())
-                # Add the index 1 (second part) of "user_split" into the list "passwords"
-                # The second part is the password, its leading and trailing spaces are removed
-                passwords.append(user_split[1].strip())
+                    user_split = line.split(",")
+                    # Add the index 0 (first part) of "user_split" into the list "usernames"
+                    # The first part is the username, its leading and trailing spaces are removed
+                    usernames.append(user_split[0].strip())
+                    # Add the index 1 (second part) of "user_split" into the list "passwords"
+                    # The second part is the password, its leading and trailing spaces are removed
+                    passwords.append(user_split[1].strip())
     except:
         print(f"Please check the current directory and the location of the text file {user_file}\n")
         exit()

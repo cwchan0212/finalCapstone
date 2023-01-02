@@ -3,16 +3,16 @@
 ========================================================================================================================
 
 The total number of users registered with task_manager.py: 6
-The total number of tasks that have been generated and tracked using task_manager.py: 20
+The total number of tasks that have been generated and tracked using task_manager.py: 22
 
                                     No. of tasks            No. of tasks          No. of ongoing      No. of uncompleted
                                     assigned (%)           completed (%)               tasks (%)        overdue task (%)
 ------------------------------------------------------------------------------------------------------------------------
-admin                                   2 ( 10%)                0 (  0%)                0 (  0%)                2 ( 10%)
-boss                                    2 ( 10%)                0 (  0%)                0 (  0%)                2 ( 10%)
-chris                                   4 ( 20%)                1 (  5%)                0 (  0%)                3 ( 15%)
-john                                    4 ( 20%)                2 ( 10%)                1 (  5%)                1 (  5%)
-kay                                     3 ( 15%)                3 ( 15%)                0 (  0%)                0 (  0%)
-mark                                    5 ( 25%)                1 (  5%)                0 (  0%)                3 ( 15%)
+admin                                   4 ( 18%)                1 (  5%)                1 (  5%)                2 (  9%)
+boss                                    2 (  9%)                0 (  0%)                2 (  9%)                0 (  0%)
+chris                                   4 ( 18%)                1 (  5%)                0 (  0%)                3 ( 14%)
+john                                    4 ( 18%)                2 (  9%)                1 (  5%)                1 (  5%)
+kay                                     3 ( 14%)                3 ( 14%)                0 (  0%)                0 (  0%)
+mark                                    5 ( 23%)                2 (  9%)                0 (  0%)                3 ( 14%)
 ------------------------------------------------------------------------------------------------------------------------
-total                                  20 (100%)                7 ( 35%)                1 (  5%)               11 ( 55%)
+total                                  22 (100%)                9 ( 41%)                4 ( 18%)                9 ( 41%)

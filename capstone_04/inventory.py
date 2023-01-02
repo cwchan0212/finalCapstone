@@ -151,7 +151,7 @@ def print_banner():
         # Print the element of line with the required spaces
         print(f"{' ' * ((display_width - len(line))//2) }{line}")
     # Set a variable "menu_header" to store the menu header
-    menu_header = "==Inventory System=="
+    menu_header = "==Inventory Management System=="
     # Set a variable "menu_header_with_space" to store the menu header with space
     menu_header_with_space = " ".join([character.upper() for character in menu_header])
     # Print the variable "menu_header_with_space" with the required spaces
@@ -226,9 +226,11 @@ def capture_shoes():
     if inventory_list:
         # Use for-loop to store the list of the Shoe object with all the elements "inventory_line" of the list "inventory_list", 
         for index, inventory_line in enumerate(inventory_list):
-            # Use the list "shoe_list" to store the "Shoe" objects
-            # index of the list "inventory_line": Country, Code, Product, Cost, Quantity
-            shoe_list.append(Shoe(inventory_line[0], inventory_line[1], inventory_line[2], inventory_line[3], inventory_line[4]))
+            # If the variable "inventory_line" is not empty, execute the following if/else statements
+            if inventory_line:
+                # Use the list "shoe_list" to store the "Shoe" objects
+                # index of the list "inventory_line": Country, Code, Product, Cost, Quantity
+                shoe_list.append(Shoe(inventory_line[0], inventory_line[1], inventory_line[2], inventory_line[3], inventory_line[4]))
     # Return the list "shoe_list"
     return shoe_list
 #
@@ -436,6 +438,8 @@ def re_stock():
                                                         # Print the shoe table by calling a function "print_shoe_result" 
                                                         # with the parameters "shoe_main_header", "shoe_header", "one_shoe_list"
                                                         print_shoe_result(shoe_main_header, shoe_header, one_shoe_list)
+                                                        # Print the message to notify the user for restocking successfully
+                                                        print(f"The item [{item_number}] is restocked (+{number_of_shoes}) successfully.\n")
                                                         # Set the variable "is_restocked" to true after restocked
                                                         is_restocked = True
                                                 # If it fails to update the text file "inventory.txt", please the message to notify the user 

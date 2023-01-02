@@ -1,8 +1,8 @@
 admin, Register Users with taskManager.py, Use taskManager.py to add the usernames and passwords for all team members that will be using this program., 10 Oct 2019, 20 Oct 2019, No
 admin, Assign initial tasks, Use taskManager.py to assign each team member with appropriate tasks, 10 Oct 2019, 25 Oct 2019, No
 chris, Hire new employees, Approve the budget of the recruitment costs, 23 Mar 2022, 3 Dec 2022, No
-boss, Meet the new customers, Discuss with them the detail of the new contracts, 14 Nov 2022, 31 Dec 2022, No
-boss, Visit the customers' shops and office, Seek their feedback on the company services, 16 Dec 2022, 30 Nov 2022, No
+boss, Meet the new customers, Discuss with them the detail of the new contracts, 14 Nov 2022, 31 Dec 2023, No
+boss, Visit the customers' shops and office, Seek their feedback on the company services, 16 Dec 2022, 30 Nov 2023, No
 chris, Meet the staff, Approve and sign the annual appraisal report, 6 Jul 2022, 30 Jul 2022, No
 john, Purchase the equipment, Review and approval the quotations of the vendors, 2 Sep 2022, 31 Dec 2022, No
 john, Perform fixed asset counting, Seek advice and support from Finance Department, 10 Dec 2022, 20 Dec 2023, No
@@ -17,4 +17,6 @@ john, Organise the staff training course, Book the conference for the course, 10
 kay, Repair the blockage of the kitchen sink, Call the technician to repair, 6 Dec 2022, 18 Jan 2023, Yes
 mark, Hire a car for the guests, Pay the cost to the car rental company, 22 Nov 2022, 5 Dec 2022, No
 chris, Perform staff deployment, Draft the duty roster for the work-from-home plan, 16 Nov 2022, 16 Dec 2022, Yes
-mark, Renew the tenancy agreement of the office, Liaison with the property agent, 17 Dec 2022, 12 Jul 2022, Yesjohn, 1, 1, 17 Dec 2022, 25 Dec 2022, No
+mark, Renew the tenancy agreement of the office, Liaison with the property agent, 17 Dec 2022, 12 Jul 2022, Yes
+admin, It is a test, It is a test, 02 Jan 2023, 31 Dec 2023, Yes
+admin, admin demo, It is a test description 2, 02 Jan 2023, 31 Dec 2023, No
