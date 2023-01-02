@@ -16,7 +16,7 @@
 ### Introduction
 This project contains a program that allows the user to access two different financial calculators: an investment calculator and a home loan repayment calculator.
 
-<p align="center"><img src="assets/capston01_1.png" width="600" target="_blank"/></p>
+<p align="center"><img src="assets/capston01_1.png" alt="click to enlarge image" title="click to enlarge image" width="600" target="_blank"/></p>
 
 ### Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -54,7 +54,7 @@ The investment calculator allows the user to calculate the future value of their
 
 To use the investment calculator, follow the prompts in the command line interface (CLI).
 
-|<p align="center"><img src="assets/capston01_2.png" width="500" target="_blank"/>   |<p align="center"><img src="assets/capston01_3.png" width="500" target="_blank"/>|
+|<p align="center"><img src="assets/capston01_2.png" width="500" alt="click to enlarge image" title="click to enlarge image" target="_blank"/>   |<p align="center"><img src="assets/capston01_3.png" width="500" alt="click to enlarge image" title="click to enlarge image" target="_blank"/>|
 |---|---|
 | Simple Interest: deposit_amount x (1 + (interest_rate/100) x year)   | Compound Interest: deposit_amount * (1 + (interest_rate/100)^year) |
   
