@@ -1,5 +1,5 @@
 ## DfE Software Engineering - Capstone Projects
-- Author: [Eddy Chan, chi-wai](https://www.linkedin.com/in/cwchanst/)
+- Author: <a href="https://www.linkedin.com/in/cwchanst/" target="_blank">Eddy Chan, chi-wai </a>
 
 | Name  | Description  |  Skills  | Completion Date  | Difficulty  | Preview |
 |---|---|---|---|:-:|:-:|
