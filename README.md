@@ -16,7 +16,7 @@
 ### Introduction
 This project contains a program that allows the user to access two different financial calculators: an investment calculator and a home loan repayment calculator.
 
-<p align="center"><img src="assets/capston01_1.png" width="400"/></p>
+<p align="center"><img src="assets/capston01_1.png" width="600"/></p>
 
 ### Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -24,7 +24,7 @@ These instructions will get you a copy of the project up and running on your loc
 #### Prerequisites
 You will need the following software to run the financial calculators:
 
-- Python 3
+- [Python](https://www.python.org/)
 
 #### Installation
 To get started with the financial calculators, follow these steps:
@@ -117,8 +117,8 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 You will need the following software to run the task manager:
 
-- Python 3
-- 
+- [Python 3](https://www.python.org/)
+
 #### Installation
 To get started with the task manager, follow these steps:
 
@@ -182,7 +182,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 You will need the following software to run the task manager:
 
-- Python 3
+- [Python 3](https://www.python.org/)
 - 
 ### Installation
 To get started with the task manager, follow these steps:
@@ -260,8 +260,8 @@ This program is an inventory management tool for shoe warehouses. It allows the 
 - Calculate the total value of each stock item.
 
 ### Requirements
-- Python 3
-- tabulate (for formatting table output)
+- [Python 3](https://www.python.org/)
+- [tabulate](https://pypi.org/project/tabulate/) (for formatting table output)
 
 
 ### Installation
@@ -348,9 +348,9 @@ This project is a program for a bookstore that allows a clerk to manage the stor
 - Search the database to find a specific book.
 
 ### Requirements
-- Python 3
-- SQLite
-- tabulate (for formatting table output)
+- [Python 3](https://www.python.org/)
+- [SQLite](https://www.sqlite.org/index.html)
+- [tabulate](https://pypi.org/project/tabulate/) (for formatting table output)
 
 ### Installation
 To get started with the inventory system, follow these steps:
