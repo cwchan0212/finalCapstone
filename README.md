@@ -11,7 +11,7 @@
 
 ---
 
-## [Capstone Project I: Financial Calculator](#dfe-software-engineering---capstone-projects) <a href="https://bit.ly/3vyy77A" target="_blank"> :arrow_right: </a>  
+## [Capstone Project I: Financial Calculator](#dfe-software-engineering---capstone-projects--arrow_right-) <a href="https://bit.ly/3vyy77A" target="_blank"> :arrow_right: </a>  
 
 ### Introduction
 This project contains a program that allows the user to access two different financial calculators: an **investment calculator** and a **home loan repayment calculator**.
@@ -106,7 +106,7 @@ amount = round(((interest_rate/100)/12) * present_value_of_the_house / (1 - math
 
 ---
 
-## [Capstone Project II: Task Manager](#dfe-software-engineering---capstone-projects) <a href="https://bit.ly/3CbD8qj" target="_blank"> :arrow_right: </a> 
+## [Capstone Project II: Task Manager](#dfe-software-engineering---capstone-projects--arrow_right-) <a href="https://bit.ly/3CbD8qj" target="_blank"> :arrow_right: </a> 
 
 ### Introduction
 
@@ -205,7 +205,7 @@ Once the user has successfully logged in, they will be presented with the follow
 
 ---
 
-## [Capstone Project III: Task Manager (Advanced)](#dfe-software-engineering---capstone-projects) <a href="https://bit.ly/3G5SrDg" target="_blank"> :arrow_right: </a> 
+## [Capstone Project III: Task Manager (Advanced)](#dfe-software-engineering---capstone-projects--arrow_right-) <a href="https://bit.ly/3G5SrDg" target="_blank"> :arrow_right: </a> 
 
 ### Introduction
 
@@ -309,7 +309,7 @@ Some statistics may be inaccurate if tasks are deleted from **tasks.txt**.
 
 --- 
 
-## [Capstone Project IV: Inventory System](#dfe-software-engineering---capstone-projects) <a href="https://bit.ly/3WB1Uru" target="_blank"> :arrow_right: </a> 
+## [Capstone Project IV: Inventory System](#dfe-software-engineering---capstone-projects--arrow_right-) <a href="https://bit.ly/3WB1Uru" target="_blank"> :arrow_right: </a> 
 
 ### Introduction
 This program is an **inventory management tool** for shoe warehouses. It allows the user to perform various tasks related to **managing the warehouse** and its **inventory**. It will read from the text file **inventory.txt**.
@@ -424,7 +424,7 @@ Once the user accesses the program, the menu is shown below:
 
 ---
 
-## [Capstone Project V: Bookstore Management System](#dfe-software-engineering---capstone-projects) <a href="https://bit.ly/3GrIWOX" target="_blank"> :arrow_right: </a> 
+## [Capstone Project V: Bookstore Management System](#dfe-software-engineering---capstone-projects--arrow_right-) <a href="https://bit.ly/3GrIWOX" target="_blank"> :arrow_right: </a> 
 
 
 ### Introduction

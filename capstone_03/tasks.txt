@@ -18,5 +18,3 @@ kay, Repair the blockage of the kitchen sink, Call the technician to repair, 6 D
 mark, Hire a car for the guests, Pay the cost to the car rental company, 22 Nov 2022, 5 Dec 2025, No
 chris, Perform staff deployment, Draft the duty roster for the work-from-home plan, 16 Nov 2022, 16 Dec 2022, Yes
 mark, Renew the tenancy agreement of the office, Liaison with the property agent, 17 Dec 2022, 12 Jul 2022, Yes
-admin, It is a test, It is a test desc, 02 Jan 2023, 31 Dec 2023, Yes
-admin, It is a demo task, It is a delete desc, 02 Jan 2023, 31 Dec 2023, No
