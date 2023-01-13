@@ -1,7 +1,7 @@
 ## DfE Software Engineering - Capstone Projects
 - Author: <a href="https://www.linkedin.com/in/cwchanst/" target="_blank">Eddy Chan, chi-wai </a>
 
-| Name  | Description  |  Skills  | Completion Date  | Difficulty  | Preview |
+| Name  | [Description](https://bit.ly/3vyy77A){:target="_blank" rel="noopener"}  |  Skills  | Completion Date  | Difficulty  | Preview |
 |---|---|---|---|:-:|:-:|
 | [Financial Calculator](#capstone-project-i-financial-calculator)  | Built a financial calculator that allows the user to access two different financial calculators: an investment calculator and a home loan repayment calculator.  | Python  | 6 December 2022  | :star: :star:  | <a href="https://bit.ly/3vyy77A" target="_blank"> :arrow_right: </a>  |
 | [Task Manager](#capstone-project-ii-task-manager)  | Built a task management tool for small businesses that allows users to log in, register new users, add tasks, and view a list of tasks.  | Python  | 12 December 2022  | :star: :star: :star:  |<a href="https://bit.ly/3CbD8qj" target="_blank"> :arrow_right: </a>  |
