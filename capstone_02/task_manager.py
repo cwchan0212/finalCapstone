@@ -73,6 +73,29 @@ def valid_date(year_param, month_param, day_param):
 # END: self-defined function
 #
 ########################################################################################################################
+#
+# START: self-defined function - "get_username_list"
+#
+# Create a function "get_username_list" to get the list of usernames in the text file user.txt
+#
+def get_username_list():
+    # Set a list "username_list" to empty
+    username_list = []
+    # Use try and except block to read the text file user.txt as the "file" object
+    try:
+        with open(f"{current_directory}/{user_file}", "r") as file:
+            # Set the list "username_list" to store all the elements "user_line" in the "file" object
+            username_list = [user_line.split(",")[0].strip() for user_line in file]
+    # If it fails to load the text file user.txt, print the message to notify 
+    # the user to check the current path and the location of the text file user.txt
+    except:
+        print(f"Fail to load the text file {user_file}. Please check the current path and the location of the text file {task_file}.\n")
+    # Return the list "username_list"
+    return username_list
+#
+# END: Create self-defined function - "get_username_list"
+#
+########################################################################################################################
 # Create a function "print_banner" to print the banner of the system 
 # 
 def print_banner():
@@ -400,12 +423,36 @@ e - Exit\n\
         while not task_added:            
             # If the variable "username_assigned" is empty, ask the user to enter the username whom the task is assigned
             if not username_assigned:
+            # Create a list "username_list" to store the list of username
+                username_list = get_username_list()
+                # Create a list "username_index" to store the ist of username index
+                username_index = [str(index + 1) for index in range(len(username_list))]
+                # create a variable "username_assigned_string" to empty 
+                username_assigned_string = ""
+                # Use for-loop to store the concatenate the list of username for display
+                for index, username in enumerate(username_list):
+                    username_assigned_string += f"  {username_index[index]} - {username_list[index]}\n"
+
                 # Remove the leading and trailing spaces of the username to whom the task is assigned,
                 # store it in the variable "username_assigned"
-                username_assigned = input("Please enter a username whom the task is assigned: ").strip()
-                # If the variable "username_assigned" is empty, print the message to notify the user
+                # Note: the variable "username_assigned" is set to the number string first, 
+                # finally it returns to the username and store in the user.text
+                username_assigned = input(f"Please enter the number of the username whom the task is assigned\n{username_assigned_string}   :  ").strip()
+
+                # If the variable "username_assigned" is empty, print the message to notify the user of the blank input
                 if username_assigned == "":
-                    print("The assigned username is blank.\n")     
+                    print("The assigned username is blank.\n")  
+                # If the username_assigned is not found in the list "username_list",
+                # print the message to notify the user that the number of the assigned username, 
+                # and set the variable "username_assigned" to empty
+                elif username_assigned not in username_index:
+                    username_assigned = ""
+                    print("The number of the assigned username is not found in the list.\n") 
+                # If any other case, set the variable "username_assigned" to  store the username 
+                # at the index of the list "username_list"
+                else:
+                    username_assigned = username_list[int(username_assigned)-1]
+
             # If the variable "username_assigned" is not empty, proceed to check the variable "task_title"      
             else:
                 # If the variable "task_title" is empty, ask the user to enter the title of the task
