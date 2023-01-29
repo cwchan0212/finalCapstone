@@ -517,7 +517,7 @@ Once the user accesses the program, the menu is shown below:
 - **Search Book:** It allows the user to **search** the book from the database by entering the **id**, **title**, **author** or **quantity** of the book. 
   - Search by **id:** It is an **exact match** search, the id of the book must be matched with that in our database.
   - Search by **title** / author: It is a **wildcard search**, one or more characters of title or author are matched with that in our database.
-  - Search by quantity: It is a **range search**, the user is required to enter the minimum quantity and **maximum** quantity of the books.
+  - Search by quantity: It is a **range search**, the user is required to enter the **minimum** quantity and **maximum** quantity of the books.
 
 <p align="center"><img src="assets/capston05_5.png"  width="600" target="_blank"/><br><i>Fig. 5.6 Search Book</i></p>
 
