@@ -13,6 +13,7 @@
 #
 import os
 from datetime import datetime
+from getpass4 import getpass
 #
 # END: import library
 #
@@ -1141,7 +1142,7 @@ def reg_user():
             new_username = True
             
     # # Ask the user to enter a new password and store it in the variable "new_password_input"
-    new_password_input = input("Please enter a new password: ").strip()        
+    new_password_input = getpass("Please enter a new password: ")       
     # Set the variable "username_added" to false for the registration status 
     username_added = False
     # If the variable "new_username_input" and the variable "new_password_input" are not blank,
@@ -1150,7 +1151,7 @@ def reg_user():
         # Use while-loop to execute the following statement if the condition of the variable "username_added" is true 
         while not username_added:
             # Ask the user to enter the password again for confirmation and store it in the variable "new_confirmed_password_input"
-            new_confirmed_password_input = input("Please enter a new password again: ").strip()   
+            new_confirmed_password_input = getpass("Please enter a new password again: ") 
             # If the variable "new_password_input" is matched with the variable "new_confirmed_password_input", 
             # it writes the new username and password with the separator (i.e. comma) in the text file "user.txt as the "file" object
             if new_password_input == new_confirmed_password_input:
@@ -1172,7 +1173,7 @@ def reg_user():
                 print("The passwords are not matched. Please try again.")
                 # Ask the user to enter the new password again 
                 # if the confirmed password is not matched with the new password
-                new_password_input = input("Please enter a new password: ").strip() 
+                new_password_input = getpass("Please enter a new password: ")
     # If the user does not enter the username or the password,
     # it prints the message to notify the user of the blank input
     else:
@@ -1722,7 +1723,7 @@ def login():
         # If the variable "password_input" is empty, ask the user to enter the password
             if password_input == "": 
                 # Ask the user to enter the password and store in the variable "password_input"
-                password_input = input("Please enter your password: ").strip()
+                password_input = getpass("Please enter your password: ")
                 # If the variable "password_input" is empty, use "break" to exit the while-loop
                 if password_input == "":
                     break
